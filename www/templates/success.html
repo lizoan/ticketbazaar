@@ -1,0 +1,41 @@
+<ion-view style="" id="page10" title="success">
+<ion-nav-title>
+		<h2 class="tb-head">SUCCESS</h2>
+    </ion-nav-title>
+	
+    <ion-content class="has-header tb-my-wallet-wrap">
+		<div class="tb-settings-wrap success_page">
+
+		<div class="success"></div>
+		<h4>Payment Successful</h4>
+         <h6>Your payment has been successful,<br>Thank you for your Purchase</h6>
+         <ul>
+						<li class="tb-bk-child-1">BOOKING ID :{{book_now_details.booking_id}}</li>
+						<li class="tb-bk-child-2"></li>
+					</ul>
+					<ul>
+						<li class="tb-bk-child-1">SEAT NO :{{book_now_details.seat_no}} </li>
+						<li class="tb-bk-child-2"></li>
+					</ul>
+					<ul>
+						<li class="tb-bk-child-1">AMOUNT PAID :{{book_now_details.amount}}</li>
+						<li class="tb-bk-child-2"></li>
+					</ul>
+					<ul>
+						<li class="tb-bk-child-1">PAYMENT STATUS : SUCCESS</li>
+						<li class="tb-bk-child-2"></li>
+					</ul>
+
+		
+			
+		
+	</div>
+	<!-- <div class="pay_btn"><button class="payment_btn">Book Now</button></div> -->
+		<div class="tb-proceed-bay">
+				<button class="tb-proceed-btn" ng-click="homepage()">GOTO<br>HOMEPAGE</button>
+				<button class="tb-proceed-btn" ui-sref="sidemenu.bookinghistory" >GOTO<br>MYACCOUNT</button>
+			</div>
+	</div>
+	
+	</ion-content>
+</ion-view>

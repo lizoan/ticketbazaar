@@ -1,0 +1,71 @@
+<ion-view style="" id="page2" title="movies">
+<ion-nav-title>
+		<h2 class="tb-head">TICKET BAZZAR</h2>
+    </ion-nav-title>
+	
+
+    <ion-content class="has-header">
+
+		<div class="tb-search-bar">
+		<input type="text" class="tb-search-bar-input" placeholder="Search for Movie" ng-model="search">
+	</div>
+
+	<!-- Now showing start -->
+
+		<div class="tb-movie-wrap" ng-show="nowshowing" ng-init="movies()">
+			<ul>
+				<li ng-repeat="movies in trailers | filter:search ">
+					<div class="tb-movie-banner">
+						<img src="{{myFunction(movies.image)}}" ng-click="getmoviedetails(movies.id)" ui-sref="sidemenu.more">
+						<div class="tb-ratting">90%</div>
+					</div>
+					<div class="tb-movie-btm">
+						<div class="tb-movie-left"><h1>{{movies.movie_name}}</h1><p>({{movies.name}})</p></div>
+						<div class="tb-movie-right">
+						<button class="tb-more-btn"  ng-click="book_film(movies.id)">BOOK</button>
+						</div>
+					</div>
+				</li>
+				
+              
+			</ul>
+			<div class="p" ng-show="(trailers | filter:search).length == 0">No search result found!</div>
+		</div>
+		<!-- Now showing end -->
+<div class="count" ng-hide="movie_count">Oops...Sorry!!! No shows found</div>
+		<!-- Coming soon start -->
+		<div class="tb-movie-wrap" ng-show="commingsoon" >
+			<ul>
+				<li ng-repeat="films in commngfilms | filter:search  track by $index ">
+					<div class="tb-movie-banner">
+						<img src="{{myFunction(films.image)}}">
+						<div class="tb-ratting">90%</div>
+					</div>
+					<div class="tb-movie-btm">
+						<div class="tb-movie-left"><h1>{{films.movie_name}}</h1><p>({{films.name}})</p></div>
+						<div class="tb-movie-right">
+						<button class="tb-more-btn" ng-init="getmoviedetails(films.id)" ui-sref="sidemenu.more">MORE</button>
+						</div>
+					</div>
+				</li>
+				
+			</ul>
+			<div class="p" ng-show="(commngfilms | filter:search).length == 0">No search result found!</div>
+			<div class="count" ng-hide="commng_movie_count"> Oops...Sorry!!! No shows found</div>
+		</div>
+		
+		<!-- Coming soon end -->
+
+
+
+
+    </ion-content>
+	<ion-footer-bar class="tb-theme-color padding0">
+		<div class="tb-footer-menu" ng-class="{'inner-shadw' : nowshowing};" ng-click="show_tab('nowshowing')">
+		NOW SHOWING
+		</div>
+		<div class="tb-footer-menu inner-shadw" ng-class="{'inner-shadw' : commingsoon}" ng-click="show_tab('commingsoon');comngsoon()" >
+		COMING SOON
+		</div>
+	</ion-footer-bar>
+</ion-view>

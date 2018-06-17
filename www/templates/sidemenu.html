@@ -1,0 +1,38 @@
+<ion-side-menus style="" enable-menu-with-back-views="false">
+    <ion-side-menu-content>
+        <ion-nav-bar class="bar-stable">
+            <ion-nav-back-button></ion-nav-back-button>
+            <ion-nav-buttons side="left">
+                <button class="button button-icon button-clear ion-navicon" menu-toggle="left"></button>
+            </ion-nav-buttons>
+        </ion-nav-bar>
+        <ion-nav-view name="side-menu21"></ion-nav-view>
+    </ion-side-menu-content >
+    <ion-side-menu side="left">
+	<ion-content padding="false" class="side-menu-left" style="height: 620px;">
+       <div class="tb-sidemenu">
+		<ul>
+			<li class="w10" ng-show="checkLogin">
+			<div class="tb-side-profile-circle">
+			<img src="{{user_image}}">
+			</div>
+			<h1>{{userData.first_name}} {{userData.last_name}}</h1>
+			</li>
+			<li class="w12" ui-sref="sidemenu.location" ng-click="location()" menu-close><img src="img/location.png">CHANGE LOCATION</li>
+			<li class="w2" ui-sref="sidemenu.home" menu-close><img src="img/tb-home1.png"><br>HOME</li>
+			<li class="w3" ui-sref="sidemenu.movies" menu-close><img src="img/tb-movie1.png"><br>MOVIES</li>
+			<!-- <li class="w3" ui-sref="sidemenu.sports"><img src="img/tb-sports1.png"><br>SPORTS</li>
+			<li class="w4" ui-sref="sidemenu.festivals"><img src="img/tb-festival1.png"><br>FESTIVALS</li> -->
+			<li class="w4" ui-sref="sidemenu.myaccounts" menu-close ng-show="checkLogin"><img src="img/tb-event1.png"><br>MY ACCOUNT</li>
+			<li class="w5" ui-sref="sidemenu.trailer" menu-close><img src="img/tb-trailer1.png"><br>TRAILERS</li>
+			<li class="w6" ui-sref="sidemenu.deals" menu-close><img src="img/tb-deals1.png"><br>DEALS</li>
+			<li class="w7" ui-sref="sidemenu.giftcards" menu-close><img src="img/tb-giftcard1.png"><br>GIFT CARDS</li>
+			<li class="w8" ng-hide="checkLogin" ui-sref="sidemenu.signin" menu-close><img src="img/tb-logout1.png"><br>SIGNIN</li>
+			
+			<li class="w9" ng-show="checkLogin" ui-sref="sidemenu.signin" menu-close ng-click="logout()"><img src="img/tb-logout1.png">LOG OUT</li>
+			
+		</ul>
+	   </div>
+    </ion-content>
+     </ion-side-menu>
+</ion-side-menus>

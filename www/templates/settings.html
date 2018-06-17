@@ -1,0 +1,87 @@
+<ion-view style="" id="page20" title="settings">
+<ion-nav-title>
+		<h2 class="tb-head">SETTINGS</h2>
+    </ion-nav-title>
+	
+
+    <ion-content class="has-header">
+	<div class="tb-settings-wrap">
+		<div class="tb-settings-panel" ng-click="edit_pro();toggleGroup(0)" ng-class="{active: isGroupShown(0)}">
+			<div class="tb-settings-left ">EDIT PROFILE</div>
+			<div class="tb-settings-right">
+				<i class="icon float-right collapse-icon" ng-class="isGroupShown(0) ? 'ion-chevron-down' : 'ion-chevron-right'"></i>
+			</div>
+		</div>
+		
+		<div ng-form="updateform">
+		<div class="tb-settings-panel-content" ng-show="isGroupShown(0)">
+			<div class="tb-settings-panel-content-inner">
+				<input class="tb-settings-input" placeholder="FIRST NAME" type="text" ng-model="details.first_name" name="firstname" required>
+				 <small class="error" ng-show="submitted && updateform.firstname.$error.required">*Firstname required.</small>
+				<input class="tb-settings-input" placeholder="LAST NAME" type="text" ng-model="details.last_name" name="lastname" required>
+				 <small class="error" ng-show="submitted && updateform.lastname.$error.required">*Lastname required.</small>
+				<input class="tb-settings-input" placeholder="EMAIL" type="email" ng-model="details.email" name="email" required>
+				 <small class="error" ng-show="submitted && updateform.email.$error.required">*Email id is required.</small>
+				  <small class="error" ng-show="submitted && updateform.email.$error.invalid">Invalid Email.</small>
+				<input class="tb-settings-input" placeholder="MOBILE" type="text" ng-model="details.phone" name="mobile" required>
+				 <small class="error" ng-show="submitted && updateform.mobile.$error.required">*This field is required.</small>
+				<h6>GENDER?</h6>
+				<div class="tb-check-wrap">
+					<div class="tb-check"><input type="radio" name="radio" class="check_true" ng-model="details.gender" value="male" ng-change="gender(male)" checked/></div><div class="tb-label">MALE</div>
+					<div class="tb-check"><input type="radio" name="radio" class="check_true" ng-model="details.gender" value="female"  ng-change="gender(female)"/></div><div class="tb-label">FEMALE</div>
+				</div>
+				<h6>DATE OF BIRTH</h6>
+				<div class="tb-check-wrap">
+					<input class="tb-dob" type="text" placeholder="DATE" ng-model="details.day">
+					<input class="tb-dob" type="text" placeholder="MONTH" ng-model="details.month" style="margin: 0px 15px;">
+					<input class="tb-dob" type="text" placeholder="YEAR" ng-model="details.year">
+				</div>
+				<h6>MARRIED?</h6>
+				<div class="tb-check-wrap">
+					<div class="tb-check"><input type="radio" name="radio1" class="check_true" ng-model="details.married_status" value="yes" ng-change="married(yes)" checked /></div><div class="tb-label">YES</div>
+					<div class="tb-check"><input type="radio" name="radio1" class="check_true" ng-model="details.married_status" value="no" ng-change="married(no)" /></div><div class="tb-label">NO</div>
+				</div>
+				
+				<div class="tb-proceed-bay">
+					<button class="tb-proceed-btn" ng-click="submitted=true;doupdate(updateform)">UPDATE</button>
+				</div>
+			</div>
+		</div>
+		</div>
+		<div class="updateform_error" ng-show="updateform_error">
+					{{updateform_error_msg}}
+				</div>
+		<div class="tb-settings-panel" ng-click="toggleGroup(1)" ng-class="{active: isGroupShown(1)}">
+			<div class="tb-settings-left ">CHANGE PASSWORD</div>
+			<div class="tb-settings-right"><i class="icon float-right collapse-icon" ng-class="isGroupShown(1) ? 'ion-chevron-down' : 'ion-chevron-right'"></i>
+			</div>
+		</div>
+     
+		<div ng-form="confirm">
+		  <div class="tb-settings-panel-content" ng-show="isGroupShown(1)">
+			<div class="tb-settings-panel-content-inner">
+				<input class="tb-settings-input" placeholder="CURRENT PASSWORD" type="password" ng-model="confirmed.curntpaswrd" name="curntpaswrd" required>
+
+				<small class="error" ng-show="submitted && confirm.curntpaswrd.$error.required">*This field is required.</small>
+                 
+				<input class="tb-settings-input" placeholder="NEW PASSWORD" type="password" ng-model="confirmed.newpaswrd" name="newpaswrd" required ng-minlength='6' ng-maxlength='20'>
+                <small class="error" ng-show="submitted && confirm.newpaswrd.$error.required">*This field is required.</small>
+                <div class="error" ng-show="confirm.newpaswrd.$touched && confirm.newpaswrd.$error.minlength">password should have minimum 6 characters</div>
+					     <div class="error" ng-show="confirm.newpaswrd.$touched && confirm.newpaswrd.$error.maxlength">password should have maximum 20 characters</div>
+                 
+				<input class="tb-settings-input" placeholder="CONFIRM PASSWORD" type="password" ng-model="confirmed.password" name="password" required>
+				<small class="error" ng-show="submitted && confirm.password.$error.required">*This field is required.</small>
+				<!-- <small class="error" ng-show="confirm.newpaswrd!=confirm.password">Password Mismatch</small> -->
+
+				<div class="tb-proceed-bay">
+					<button class="tb-proceed-btn" ng-click="submitted=true;confirmpassword(confirm)">RESET PASSWORD</button>
+				</div>
+			</div>
+		</div>
+		</div>
+		<div class="confirm_error" ng-show="confirm_error">
+					{{confirm_error_msg}}
+				</div>
+	</div>
+	</ion-content>
+</ion-view>

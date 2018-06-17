@@ -1,0 +1,63 @@
+<ion-view style="" id="page1" title="">
+  <!-- <ion-nav-buttons side="left">
+    <button menu-toggle="left" class="button button-icon icon ion-navicon"></button>
+    
+  </ion-nav-buttons> -->
+	<ion-nav-title>
+		<h2 class="tb-head">TICKET BAZZAR</h2>
+    </ion-nav-title>
+	
+	<div class="tb-main-tab" ng-init="latest()">
+		<div class="tb-main-tab-inner">
+			<ul>
+				<li class="t1">HOME</li>
+				<li class="t2" ui-sref="sidemenu.movies">TICKETS</li>
+				<li class="t3" ui-sref="sidemenu.myaccounts"  ng-show="checkLogin">MY ACCOUNT</li>
+				<li class="t4" ui-sref="sidemenu.trendings">TRENDINGS</li>
+			</ul>
+		</div>
+	</div>
+    <ion-content class="has-header">
+    
+		<ion-slide-box does-continue="true" auto-play="true"  show-pager="false" pager-click="false" on-slide-changed="slideHasChanged($index)"  delegate-handle="image-viewer">
+           	<ion-slide ng-repeat="films in latestfilms">
+           		<div class="tb-main-movie-book">
+	           		<div class="tb-book-btn-wrap">
+						<button class="tb-book-btn" ui-sref="sidemenu.pickvenue" ng-click="movie_details(films.id)">BOOK NOW</button>
+					</div>
+	              	<img src="{{myFunction(films.image)}}">
+	            </div>
+           </ion-slide>
+
+           <!-- <ion-slide>
+           		<div class="tb-main-movie-book">
+	              	<div class="tb-book-btn-wrap">
+						<button class="tb-book-btn"ui-sref="sidemenu.pickvenue">BOOK NOW</button>
+					</div>
+	              	<img src="img/tb_bg1.png">
+	            </div>
+           </ion-slide>
+
+           <ion-slide>
+           		<div class="tb-main-movie-book">
+	              	<div class="tb-book-btn-wrap">
+						<button class="tb-book-btn"ui-sref="sidemenu.pickvenue">BOOK NOW</button>
+					</div>
+	              	<img src="img/tb_bg2.png">
+	            </div>
+           </ion-slide>
+
+           <ion-slide>
+           		<div class="tb-main-movie-book">
+	              	<div class="tb-book-btn-wrap">
+						<button class="tb-book-btn"ui-sref="sidemenu.pickvenue">BOOK NOW</button>
+					</div>
+	              	<img src="img/tb_bg3.png">
+	            </div>
+           </ion-slide> -->
+
+        </ion-slide-box>
+
+
+    </ion-content>
+</ion-view>

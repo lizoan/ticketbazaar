@@ -1,0 +1,95 @@
+<ion-view style="" id="page17" title="">
+	<ion-nav-title>
+		<h2 class="tb-head">MY WALLET</h2>
+    </ion-nav-title>
+	<!-- <ion-nav-buttons side="right">
+		<button class="button button-clear  icon tb-filter-btn txt-color-white m-r"></button>
+    </ion-nav-buttons> -->
+    <ion-content class="has-header">
+	<div class="tb-settings-wrap">
+		<div class="tb-my-wallet-wrap">
+			<div class="tb-my-wallet-inner">
+				<div class="tb-wallet-left">TOTAL BALANCE</div>
+				<div class="tb-wallet-right">$750.0</div>
+			</div>
+			<div class="tb-settings-panel" ng-click="toggleGroup(0)" ng-class="{active: isGroupShown(0)}">
+				<div class="tb-settings-left ">TRANSACTION HISTORY
+				</div>
+				<div class="tb-settings-right">
+					<i class="icon float-right collapse-icon" ng-class="isGroupShown(0) ? 'ion-chevron-down' : 'ion-chevron-right'"></i>
+				</div>
+			</div>
+			<div class="tb-my-wallet-wrap-inner" ng-show="isGroupShown(0)">
+				<ul>
+					<li class="tb-child-1">DEBIT FOR AMAR AKBAR ANTHONY (U)<br>20-10-2015 08:46:40</li>
+					<li class="tb-child-2">20-10-2015 08:46:40<br>Rs. 30.00<br>DEBIT</li>
+					<li class="tb-child-3">RS. 0.00 <br>BALANCE</li>
+					<div class="tb-wallet-hr"></div>
+				</ul>
+				<ul>
+					<li class="tb-child-1">DEBIT FOR AMAR AKBAR ANTHONY (U)<br>20-10-2015 08:46:40</li>
+					<li class="tb-child-2">20-10-2015 08:46:40<br>Rs. 30.00<br>DEBIT</li>
+					<li class="tb-child-3">RS. 0.00 <br>BALANCE</li>
+				</ul>
+			</div>
+			<div class="tb-settings-panel" ng-click="toggleGroup(1)" ng-class="{active: isGroupShown(1)}">
+				<div class="tb-settings-left ">TRANSFER TO BANK
+				</div>
+				<div class="tb-settings-right">
+					<i class="icon float-right collapse-icon" ng-class="isGroupShown(1) ? 'ion-chevron-down' : 'ion-chevron-right'"></i>
+				</div>
+			</div>
+			<div class="tb-my-wallet-wrap-inner" ng-show="isGroupShown(1)">
+				<div class="tb-wallet-inside">
+					<h1>OOPS!</h1>
+					<p>
+					You need to have a minimum cash balance of Rs. 110.00
+					to be able to transfer to the bank.
+					Please check T&Cs and FAQs for more details
+					</p>
+				</div>
+			</div>
+			<div class="tb-settings-panel" ng-click="toggleGroup(2)" ng-class="{active: isGroupShown(2)}">
+				<div class="tb-settings-left ">SETTINGS
+				</div>
+				<div class="tb-settings-right">
+					<i class="icon float-right collapse-icon" ng-class="isGroupShown(2) ? 'ion-chevron-down' : 'ion-chevron-right'"></i>
+				</div>
+			</div>
+			<div class="tb-my-wallet-wrap-inner" ng-show="isGroupShown(2)">
+				<div class="tb-wallet-inside">
+					<div class="tb-check-div">
+						<div class="tb-c1"></div>
+					</div>
+					<div class="tb-check-de">
+					<h5>INSTANT REFUND TO MY WALLET</h5>
+					<p>Your default settings for refunds, in case of transaction failures, is NOT SET to MyWallet
+					</p>
+					</div>
+				</div>
+			</div>
+			<div class="tb-settings-panel" ng-click="toggleGroup(3)" ng-class="{active: isGroupShown(3)}">
+				<div class="tb-settings-left ">ADD CASH
+				</div>
+				<div class="tb-settings-right">
+					<i class="icon float-right collapse-icon" ng-class="isGroupShown(3) ? 'ion-chevron-down' : 'ion-chevron-right'"></i>
+				</div>
+			</div>
+			<div class="tb-my-wallet-wrap-inner" ng-show="isGroupShown(3)">
+				<div class="tb-wallet-inside">
+					<div class="tb-check-wrap">
+						<button class="tb-dob1">+Rs.50</button>
+						<button class="tb-dob1"style="margin: 0px 15px;">+ Rs.100</button>
+						<button class="tb-dob1">+ Rs.500</button>
+						<input class="tb-settings-input1" placeholder="ENTER AMOUNT" type="text">
+					</div>
+					<div class="tb-proceed-bay">
+					<button class="tb-proceed-btn">ADD CASH</button>
+				</div>
+				</div>
+			</div>
+			
+		</div>
+	</div>
+	</ion-content>
+</ion-view>

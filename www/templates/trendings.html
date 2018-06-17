@@ -1,0 +1,41 @@
+<ion-view style="" id="page14" title="trendings">
+    <ion-nav-title>
+		<h2 class="tb-head">TICKET BAZAR</h2>
+    </ion-nav-title>
+    <div class="tb-main-tab">
+		<div class="tb-main-tab-inner">
+			<ul>
+				<li class="t1"  ui-sref="sidemenu.home">HOME</li>
+				<li class="t2" ui-sref="sidemenu.movies">TICKETS</li>
+				<li class="t3" ui-sref="sidemenu.myaccounts" ng-show="checkLogin">MY ACCOUNT</li>
+				<li class="t4" ui-sref="sidemenu.trendings">TRENDINGS</li>
+			</ul>
+		</div>
+	</div>
+	
+    <ion-content class="has-header">
+		<!-- <div class="tb-search-bar">
+			<input type="text" class="tb-search-bar-input" placeholder="Search for Movie,Language,Actor">
+		</div> -->
+      
+<!-- <p>(english)</p> -->
+		<!-- Now showing start -->
+		<div class="tb-movie-wrap-trends" ng-show="nowshowing" ng-init="toptrendings()">
+			<ul>
+				<li ng-repeat="trend in trends">
+					<div class="tb-movie-banner">
+						<img src="{{myFunction(trend.image)}}">
+						<div class="tb-ratting">{{trend.rate}}%</div>
+					</div>
+					<div class="tb-movie-btm">
+						<div class="tb-movie-left"><h1>{{trend.movie_name}}</h1></div>
+						<div class="tb-movie-right">
+						<button class="tb-more-btn" ui-sref="sidemenu.pickvenue" ng-click="book_trendfilm(trend.movie_id)">BOOK</button>
+						</div>
+					</div>
+				</li>
+				
+			</ul>
+		</div>
+    </ion-content>
+</ion-view>

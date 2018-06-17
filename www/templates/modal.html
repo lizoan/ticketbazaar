@@ -1,0 +1,21 @@
+<ion-modal-view>
+        <ion-header-bar class="bar bar-header bar-positive">
+        
+      <h1 class="title">FILMS</h1>
+          <button class="button button-clear button-primary" ng-click="modal.hide()">Cancel</button>
+        </ion-header-bar>
+       
+        <ion-content class="padding">
+          <div class="list">
+            <h4>{{movie}}</h4>
+            <label class="item item-input">
+   
+          <iframe class="youtube-player" type="text/html" width="640" height="385" ng-src="{{trustSrc(path)}}" allowfullscreen frameborder="0">
+          
+            </label>
+            <img src="{{myFunction(img)}}" width="340" height="340">
+            
+          </div>
+         
+        </ion-content>
+      </ion-modal-view>

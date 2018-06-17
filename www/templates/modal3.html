@@ -1,0 +1,26 @@
+<ion-modal-view>
+        <ion-header-bar class="bar bar-header bar-positive">
+        
+      <h1 class="title">FILTERS</h1>
+          <button class="button button-clear button-primary" ng-click="modal3.hide()">Cancel</button>
+        </ion-header-bar>
+       
+        <ion-content class="padding">
+        <div class="header">PRICE RANGE</div>
+         <div class="price" ng-repeat="price in pricerange" ng-click="getprice(price)">{{price}}</div>
+         <div class="header1">PREFFERED TIME</div>
+          <div class="shift" ng-repeat="show in showtime">
+            <div class="shift1">
+            <input type="radio" name="show_name" ng-model="prefered_time" ng-value="show.shift" ng-click="me_clicked(show.shift)"> {{show.shift}} ({{show.value}})
+            </div>
+          </div>
+        </ion-content>
+        <div class="bar bar-footer bar-positive footer">
+          <div class="title">
+            <button class="button button-clear" ng-click="call_Theaterdata(latest_movie_id,currnt_date)">Apply</button></div>
+            <div class="title1">
+            <button class="button button-clear pull-right" ng-click="filter()">Clear Filter</button>
+          </div>
+       </div>
+      </ion-modal-view>
+

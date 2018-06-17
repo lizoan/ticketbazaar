@@ -1,0 +1,100 @@
+
+<ion-view style="" id="page22" title="showtime">
+<ion-nav-title>
+		<h2 class="tb-head">SHOW TIME</h2>
+    </ion-nav-title>
+
+    <ion-content class="has-header">
+		<div class="tb-shwtime-wrap" ng-init="book_seat()">
+		<div class="tb-shw-head">
+			<div class="tb-shw-head-left">
+			<h1>{{showtimedetails.movie_name}}({{showtimedetails.language}})</h1>
+			<p>{{showtimedetails.theater}}: {{showtimedetails.location}}</p>
+			<h2>{{showtimedetails.screen_timing}}</h2>
+			</div>
+			<div class="tb-shw-head-right">
+				<div class="tb-calender float-l">
+					<div class="tb-cal-top">{{currnt_date|date :'MMM'}}</div>
+					<div class="tb-cal-btm"><h6>{{currnt_date|date :'EEE'}}</h6><p>{{day}}</p></div>
+				</div>
+			</div>
+		</div>
+		
+		<div class="tb-shw-content" ng-repeat="(key,columns) in seatarray track by $index">
+			<div class="tb-shw-gray-pane">
+				<div class="tb-shw-gray-left">
+				<h6>{{seat_header(key,'seat')}}</h6>
+				<p>avialable</p>
+				</div>
+				<div class="tb-shw-gray-right">
+				<h6>${{seat_header(key,'price')}}</h6>
+				</div>
+			</div>
+			<div class="tb-pick-seat-inner">
+		
+			<ul ng-repeat="rows in columns track by $index">
+				<li id="remove_class">{{rows.rowname.value}}</li>
+				<li ng-repeat="r in rows  track by $index" ng-show="r.check==true || r.check==false" style="text-align: center;" id="{{rows.rowname.value+$index}}" class="{{rows.rowname.value+$index}}" ng-click="selectSeat(rows.rowname.value+$index,rows.rowname.value+r.number,rows.price.value)" ng-class="get_seat_state(rows.rowname.value+r.number)">{{r.number}}</li>
+			</ul>
+		</div>
+		</div>
+		<hr/>
+		<div id="all_eyes_contact">All eyes this way please! </div>
+			<!-- <div class="tb-shw-seat">
+		
+				<div class="modal-body tb-pickseat-body">
+						
+					<table class="table preview" ng-repeat="(key,columns) in seatarray track by $index">
+						<tr>
+						<th colspan="100%" class="tb-seat-class" >
+								 <p>{{key}}</p>
+                           <div ng-init="split(key)"></div>
+							 </th><br>
+                   
+						</tr>
+
+                     
+						
+						<tr ng-repeat="rows in columns track by $index">
+							<td class="tb-pickseat-row-value">LANE :{{rows.rowname.value}}</td>
+							<td class="chair_row" ng-repeat="r in rows  track by $index" ng-show="r.check==true || r.check==false">
+								<label ng-show="r.check" ng-class="{'blk': r.check,'disb' : !r.check}" class="{{rows.rowname.value+$index}}">
+									 {{r.number}}
+								</label>
+								<input ng-show="r.check" type="checkbox" class="chair" ng-class="{'blk': r.check,'disb' : !r.check}" id="{{rows.rowname.value+$index}}" ng-click="selectSeat(rows.rowname.value+$index,rows.rowname.value+r.number,rows.price.value)" />
+							</td>
+						</tr>
+						</table>
+						
+				</div>
+										
+			</di v>-->
+	<!-- 		
+			<div class="tb-proceed-bay">
+				<button class="tb-proceed-btn"  ng-show="price>0" ng-click="payment_process()">PROCEED</button>
+			</div>
+
+			<div class="tb-shw-gray-pane" style="text-align: center;" ng-show="price>0">
+				<h6>Pay ${{price}}</h6>
+				
+				
+			</div> -->
+
+		</div>
+	</div>
+	
+    </ion-content>
+    <ion-footer-bar >
+    <div class="price_proceed">
+
+	    <div class="pay_price" style="text-align: center;" ng-show="price>0">
+					<h6>Pay ${{price}}</h6>
+		</div>
+	  		
+		<div class="pay_proceed">
+			<button class="proceed_btn"  ng-show="price>0" ng-click="payment_process()">PROCEED</button>
+		</div>
+
+		</div>	
+</ion-footer-bar>
+</ion-view>

@@ -1,0 +1,50 @@
+<ion-view style="" id="page21" title="pickvenue">
+<ion-nav-title>
+		<h2 class="tb-head">PICK A VENUE</h2>
+    </ion-nav-title>
+	
+    <ion-content class="has-header">
+	<div class="tb-pick-venue-wrap" ng-init="latest_details();">
+			<div class="tb-pick-venue-head">
+
+				<h5>{{now_film_details[0].movie_name}} ({{now_film_details[0].language}}) </h5>
+			</div>
+			<div class="tb-pick-venue-date-slider">
+			<!-- <ion-scroll direction="x" style="width:2000px; height: 70px"> -->
+        <div style="width:100%;height:70px;" ng-init="getdate()">
+		<div class="tb-calender float-l m-5">
+			<div class="tb-cal-top">{{currnt_date|date :'MMM'}}</div>
+			<div class="tb-cal-btm" ng-click="call_theatre(latest_movie_id,currnt_date)"><h6>{{currnt_date|date :'EEE'}}</h6><p>{{day}}</p></div>
+		</div>
+		<div class="tb-calender float-l m-5">
+			<div class="tb-cal-top">{{currnt_date|date :'MMM'}}</div>
+			<div class="tb-cal-btm" ng-click="call_theatre(latest_movie_id,tomorow_date);"><h6>{{tomorow_date|date :'EEE'}}</h6><p>{{nday1}}</p></div>
+		</div>
+		<div class="tb-calender float-l m-5">
+			<div class="tb-cal-top">{{currnt_date|date :'MMM'}}</div>
+			<div class="tb-cal-btm" ng-click="call_theatre(latest_movie_id,next_date);"><h6>{{next_date|date :'EEE'}}</h6><p>{{nday}}</p></div>
+		</div>
+		
+        </div>
+      <!-- </ion-scroll> -->
+			</div>
+			<div class="search_filter">
+			<div class="tb-search-bar tbsearchbar">
+		<input type="text" class="tb-search-bar-input" placeholder="Search for Theater" ng-model="search">
+	</div>
+	<div class="filter filter_width">
+			<button class="filter-button" ng-click="modal3.show()">Filter</button></div>
+</div>
+	<div class="count" ng-hide="count">Oops...Sorry!!! No show found</div>
+			<div class="tb-venue-pick" >
+                      
+				<div class="theatre" ng-repeat="details in theaterdetails | filter:search"><br/>
+                    <div class="theatername">{{details.name}}</div>
+                    <div class="date" ng-repeat="times in details.time" ng-click="select_date(times.show_id)">{{times.time}}</div><br><br><br>
+
+				</div>
+			</div>
+			
+		</div>
+    </ion-content>
+</ion-view>

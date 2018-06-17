@@ -1,0 +1,31 @@
+<ion-view style="" id="page9" title="trailer" hide-nav-bar="true">
+    <ion-content class="manual-ios-statusbar-padding tb-black-bg-color">
+		<div class="tb-trailer-wrap" >
+		<div class="tb-trailer-head">
+			<h1>MOVIE TRAILERS</h1>
+			<div class="tb-trailer-hr"></div>
+			<div class="tb-close" ng-click="close()"></div>
+		</div>
+		<div class="tb-trailer-tab">
+			<div class="trailer-tab-t1 tb-theme-color">NOW SHOWING</div>
+			<div class="trailer-tab-t1" ng-click="modal2.show()" ng-init="comngsoon()">COMING SOON</div>
+		</div>
+		<div class="count" ng-hide="trailer_count_now">Oops...Sorry!!! No trailers now </div>
+		<div class="tb-trailer-content" ng-init="trailer()">
+			<ul>
+				<li ng-repeat="trailer in trailers">
+				<div class="tb-trailer-overlay">
+				<div class="tb-play1" ng-click="video($index)"></div>
+				<div class="tb-ratting">90%</div>
+				<div class="tb-trailer-detail">
+				{{trailer.movie_name}}<br>{{trailer.name}}
+				</div>
+				</div>
+				<img src="{{myFunction(trailer.image)}}">
+				</li>
+			</ul>
+		</div>
+	</div>
+    </ion-content>
+</ion-view>
+

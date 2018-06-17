@@ -1,0 +1,37 @@
+<ion-view style="" id="page18" title="bookinghistory">
+<ion-nav-title>
+		<h2 class="tb-head">BOOKING HISTORY</h2>
+         
+    </ion-nav-title>
+	
+    <ion-content class="has-header">
+    <button class="button button-block button-assertive bluebutton" ui-sref="sidemenu.home" >Homepage</button>
+	<div class="tb-booking-history-wrap" ng-init="bookinghstry()">
+			<ul>
+				<li ng-repeat= "names in datas">
+					<div class="tb-booking-frame">
+						<div class="tb-booking-frame-left">
+							<h1>{{names.movie_name}}</h1>
+							<p>PVR:{{names.name}}, {{names.location}}</p>
+							<p>{{names.screen_timing}}| {{names.date}}</p>
+							<p>QUANTITY:{{names.no_ticket}}</p>
+							<ul>
+							<li class="child1">AMOUNT PAID</li>
+							<li class="child2">RS.{{names.amount}}</li>
+							</ul>
+						</div>
+						<div class="tb-booking-frame-right">
+							<div class="tb-booking-right-frame-inner">
+								<div class="tb-qr"><img src="img/qr-code.png"></div>
+								<hr>
+								<h4>BOOKING ID</h4>
+								<p>{{names.booking_id}}</p>
+							</div>
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<div class="count" ng-hide="book_films">Sorry!!! Currently no shows<br> are booked</div>
+	</ion-content>
+</ion-view>

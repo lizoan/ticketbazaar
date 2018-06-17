@@ -1,0 +1,81 @@
+<ion-view style="" id="page2" title="movies">
+<ion-nav-title>
+    <h2 class="tb-head">TICKET BAZZAR</h2>
+    </ion-nav-title>
+ 
+
+    <ion-content class="has-header">
+
+
+
+
+<!-- Tab start  -->
+  <div class="tb_theme_color padding0">
+    <div class="tab_menu_item" ng-class="{'inner-shadw' : details}" ng-click="show_tab('details')">
+    DETAILS
+    </div>
+    <div class="tab_menu_item" ng-class="{'inner-shadw' : review}" ng-click="show_tab('review')">
+    REVIEWS
+    </div>
+    <div class="tab_menu_item" ng-class="{'inner-shadw' : gallery}" ng-click="show_tab('gallery');" >
+    GALLERY
+    </div>
+  </div>
+
+    
+
+  <!-- Tab 1 start -->
+    <div class="tb-movie-wrap" ng-show="details" ng-init="movieesdetails()">
+      <div class="reviews review">
+          <img src="{{myFunction1(img)}}" width="365" height="300">
+          <button class="tb-more-btn"  ng-click="booking_film(moviedetails.id)">BOOK</button>
+          <div class="review">
+            <h4>MOVIE DETAILS</h4>
+            <h5> Movie : {{moviedetails.movie_name}}<br><br>
+                Director : {{moviedetails.director_name}}<br><br>
+                Language : {{moviedetails.name}}<br><br>
+                Film hours : {{moviedetails.total_hours}}<br><br>
+                Budget : {{moviedetails.film_budget}}<br><br>
+                Screenplay : {{moviedetails.screen_playnames}}
+              </h5>
+              <div class="summary">
+                <h4>SUMMARY</h4>
+                <h5>{{moviedetails.description}}</h5>
+              </div>
+            </div>
+        </div>
+    </div>
+    <!--  Tab 1 end -->
+
+    <!-- Tab 2 start -->
+    <div class="tb-movie-wrap" ng-show="review">
+      <div class="review"><h4>REVIEWS</h4>
+         <ul>
+           <li ng-repeat="comment in comments">
+                <h5>{{comment.comments}}</h5>
+           </li>
+         </ul>
+      </div>
+    </div>
+    <!-- Tab 2 end -->
+
+    <!-- Tab 3 start -->
+    <div class="tb-movie-wrap" ng-show="gallery" >
+      <div class="review"><h4>GALLERY</h4>
+        <div ng-repeat="img in images" class="image">
+          
+           <img src="{{myFunction1(img.image)}}" width="90" height="90">
+        
+        </div>
+        
+      </div>
+    </div>
+    <!-- Tab 3 end -->
+
+<!-- Tab end -->
+
+
+
+    </ion-content>
+  
+</ion-view>

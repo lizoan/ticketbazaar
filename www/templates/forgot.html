@@ -1,0 +1,27 @@
+<ion-view style="" id="page5" title="forgot" hide-nav-bar="true">
+    <ion-content class="tb-sign-wrap" padding="true">
+		<div class="tb-wrap">
+			<div class="tb-sign-logo">
+				<img src="img/tb-logo.png">
+			</div>
+			<div class="tb-sign-col2">
+				<h2>FORGOT PASSWORD</h2>
+				<div class="tb-sign-div1">
+					<div class="forgotpasword_error" ng-show="forgotpasword_error">
+					{{forgotpasword_error_msg}}
+				</div>
+					<div ng-form="forgotpasword">
+					<div class="tb-play-btn3" ng-click="submitted=true;forgot(forgotpasword)"></div>
+					<input class="tb-sign-input2" type="email" placeholder="EMAIL" ng-model="forget.email" name="email" required>
+					<small class="error" ng-show="submitted && forgotpasword.email.$error.required">Enter Your Email Id</small>
+
+					<small class="error" ng-show="submitted && forgotpasword.email.$error.invalid">Invalid Email.</small>
+				</div>
+				</div>
+				<div class="tb-agree">
+					<p style="text-align:left"><a href="#" ui-sref="sidemenu.signin"> back to login</a></p>
+				</div>
+			</div>
+		</div>
+    </ion-content>
+</ion-view>

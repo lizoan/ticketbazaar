@@ -1,0 +1,24 @@
+<ion-view style="" id="page14" title="trendings">
+<ion-nav-title>
+		<h2 class="tb-head">LOCATIONS</h2>
+    </ion-nav-title>
+	<!-- <ion-nav-buttons side="right">
+		<button class="button button-clear  icon tb-search-btn txt-color-white m-r"></button>
+    </ion-nav-buttons> -->
+
+    <ion-content>  
+<div class="location-tab" ng-init="location()">
+	<ul>
+      <li ng-repeat="loc in locations">
+      	<div class="location" ng-click="get_location(loc.id)">
+           	{{loc.location}}
+      	</div>
+      
+
+      </li>
+	</ul>
+		
+		</div>
+
+    </ion-content>
+    </ion-view>

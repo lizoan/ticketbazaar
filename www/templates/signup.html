@@ -1,0 +1,65 @@
+<ion-view style="" id="page6" title="signup" hide-nav-bar="true">
+    <ion-content class="tb-sign-wrap" padding="true">
+		<div class="tb-wrap">
+			<div class="tb-sign-logo">
+				<img src="img/tb-logo.png">
+			</div>
+			<div class="tb-sign-col">
+				<h2>SIGN UP</h2>
+				<div class="tb-sign-div">
+					<div class="sign_up_error" ng-show="sign_up_error">
+					{{sign_up_error_msg}}
+				</div>
+					<div ng-form="sign_up">
+					
+					<div class="tb-play-btn1" ng-click="submitted=true;dosignup(sign_up)"></div>
+					
+					<input class="tb-sign-input" type="text" placeholder="FIRST NAME" ng-model="signup.first_name" name="first_name" required>
+				     <small class="error" ng-show="submitted && sign_up.first_name.$error.required">Enter your first name.</small>
+				
+					<hr>
+					<input class="tb-sign-input1" type="text" placeholder="LAST NAME" ng-model="signup.last_name" name="last_name" required >
+				
+				     <small class="error" ng-show="submitted && sign_up.last_name.$error.required">Enter your last name.</small>
+					<hr>
+					<input class="tb-sign-input2" type="email" placeholder="EMAIL" ng-model="signup.email" name="email" required>
+					<small class="error" ng-show="submitted && sign_up.email.$error.required">Your Email Id</small>
+
+					<small class="error" ng-show="submitted && sign_up.email.$error.invalid">Invalid Email.</small>
+
+					
+				
+					<hr>
+					<input class="tb-sign-input1" type="password" placeholder="PASSWORD" ng-model="signup.password" required ng-minlength='6' ng-maxlength='20' name="password">
+					<small class="error" ng-show="submitted && sign_up.password.$error.required">Password required.</small>
+
+					    <div class="error" ng-show="sign_up.password.$touched && sign_up.password.$error.minlength">password should have minimum 6 characters</div>
+					     <div class="error" ng-show="sign_up.password.$touched && sign_up.password.$error.maxlength">password should have maximum 20 characters</div>
+					
+				
+					<hr>
+					<input class="tb-sign-input1" type="password" placeholder="CONFIRM PASSWORD" ng-model="cpassword" required name="cpassword">
+					<small class="error" ng-show="submitted && sign_up.cpassword.$error.required">Password is required.</small>
+
+					 <small class="error" ng-show="signup.password!=cpassword">Password Mismatch</small>
+
+				<div class="tb-agree">
+				<div class="tb-agree1">
+					<div class="tb-check"> <input type="checkbox" name="checkbox" class="check_true" ng-model="checkbox" required />
+					</div>
+
+					<div class="tb-label">I agree the terms of service</div>
+
+				</div>
+				<div class="error" ng-show="submitted && sign_up.checkbox.$error.required">Please accept Terms and Conditions.</div>
+				</div>
+				</div>
+				</div>
+				<div class="tb-agree">
+					<p>Allready had an account<a href="#" ui-sref="sidemenu.signin"> Sign In</a></p>
+				</div>
+				
+			</div>
+		</div>
+    </ion-content>
+</ion-view>

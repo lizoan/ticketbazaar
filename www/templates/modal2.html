@@ -1,0 +1,18 @@
+<ion-modal-view>
+        <ion-header-bar class="bar bar-header bar-positive">
+        
+      <h1 class="title">FILMS</h1>
+          <button class="button button-clear button-primary" ng-click="modal2.hide()">Cancel</button>
+        </ion-header-bar>
+      
+        <ion-content class="padding">
+          <div class="count" ng-hide="trailer_count">Oops...Sorry!!! No trailers now </div>
+          <div class="list" ng-repeat="films in comngtrailers">
+            <h4>{{films.movie_name}}</h4>
+            
+            <img src="{{myFunction(films.image)}}" width="340" height="340">
+            
+          </div>
+         
+        </ion-content>
+      </ion-modal-view>
